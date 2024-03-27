@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factory Method</title>
+    <script>
+        
+
+
+        //FACTORY METHOD
+
+        function createEmployee(name1, age, position, salary) { 
+    
+    var o = new Object();
+ 
+    o.name1 = name1; 
+    o.age = age;  
+    o.position = position;  
+    o.salary = salary;
+    o.getInfo = function () {
+        console.log(this.name1); 
+        console.log(this.age) ;
+        console.log(this.position);
+        console.log(this.salary);
+    }
+    return o;
+}
+const employee1 = createEmployee("Alex", 25, "Developer", 50000);
+const employee2 = createEmployee("Mike", 26, "Designer", 45000);
+
+employee1.getInfo();
+employee2.getInfo();
+
+
+// CONSTRUCTOR METHOD
+
+
+function Book(title, author, genre, pages) {
+ 
+ 
+ this.title = title;  
+ this.author = author;    
+ this.genre = genre;
+ this.pages= pages;    
+
+ this.getInfo = function () { 
+     console.log(this.title);
+     console.log(this.author);
+     console.log(this.genre);
+     console.log(this.pages);
+ }
+
+
+
+}
+const book1 = new Book('The Kite Runner', 'Khaled Hosseini', 'Fiction', 281);
+const book2 = new Book('The God of Small Things', 'Arundhati Roy', 'Classic', 218);
+
+
+book1.getInfo();
+book2.getInfo();
+
+
+
+
+// PROTOTYPE METHOD
+
+function createPerson(name, age , gender) { 
+            this.name = name;  
+    this.age = age;    
+    this.gender = gender;
+       
+ 
+    this.introduce = function () { 
+        console.log(this.name);
+        console.log(this.age);
+        console.log(this.gender);
+       
+    }          
+          }
+ 
+createPerson.prototype.sayHi = function() {
+    console.log("Good Morning! " + this.name );
+}
+createPerson.prototype.sayGoodbye = function(){
+    console.log("Good Bye! " + this.name);
+}
+ 
+const person1 = new createPerson('Sophie', 30, 'female');
+const person2 = new createPerson('Chris', 25, 'male');
+ 
+person1.introduce();  
+  person2.introduce();
+
+  person1.sayHello();  
+  person2.sayGoodbye();
+ 
+
+
+
+
+    </script>
+</head>
+<body>
+    FACTORY METNOD, CONSTRUCTOR METHOD AND PROTOTYPE METHOD
+</body>
+</html>
